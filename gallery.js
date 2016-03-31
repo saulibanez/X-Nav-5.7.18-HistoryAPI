@@ -2,10 +2,18 @@ function supports_history_api() {
   return !!(window.history && history.pushState);
 }
 
+/*
+En galery tengo los cachitos pequeños, esta utilizando ajax, la cosa que cuando falla, se va 
+al otro lado y pide el estático
+
+Biblio -> Control -> Dep III -> Dep I -> Biblio ...
+
+Para ejecutarlo en mi oredenador, poner "http://localhost:8000/gallery/", ponerlo como http://saulibanez.github.io/X-Nav-5.7.18-HistoryAPI/gallery/
+*/
 function swapPhoto(href) {
   var req = new XMLHttpRequest();
   req.open("GET",
-           "http://gsyc.es/~grex/history_api/gallery/" +
+           "http://saulibanez.github.io/X-Nav-5.7.18-HistoryAPI/gallery/" +
              href.split("/").pop(),
            false);
   req.send(null);
